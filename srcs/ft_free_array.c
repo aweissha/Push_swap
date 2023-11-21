@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 16:15:22 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/20 16:31:20 by aweissha         ###   ########.fr       */
+/*   Created: 2023/11/21 10:35:39 by aweissha          #+#    #+#             */
+/*   Updated: 2023/11/21 10:40:34 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h";
+#include "push_swap.h"
 
-int main (int argc, char **argv)
+void	ft_free_array(char **array)
 {
-	// handle different command line argument inputs and make an array of number strings of it.
-	char	**array;
-	t_stack	*stack_a;
-	
-	if (argc == 2)
-		array = ft_split(argv[1], ' ');
-	else
-		array = &argv[1];
-	// transform the array of number strings to a stack build as a doubly linked list.
-	stack_a = ft_make_stack_a(array);
-	
-	
+	int i;
 
+	i = 0;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
