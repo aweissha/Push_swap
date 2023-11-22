@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_multiples.c                               :+:      :+:    :+:   */
+/*   ft_syntax_error.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 11:57:20 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/22 13:14:06 by aweissha         ###   ########.fr       */
+/*   Created: 2023/11/22 11:30:23 by aweissha          #+#    #+#             */
+/*   Updated: 2023/11/22 13:17:16 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_multiples(char **array)
+int	ft_syntax_error(char *str)
 {
-	int	i;
-	int j;
-
-	i = 0;
-	while (array[i + 1] != NULL)
+	if (*str != '+' && *str != '-' && !(*str >= '0' && *str <= '9'))
+		return (1);
+	while (*++str)
 	{
-		j = i + 1;
-		while (array[j] != NULL)
-		{
-			if (ft_atoi_mod(array[i]) == ft_atoi_mod(array[j]))
-				return (1);
-			j++;
-		}
-		i++;
+		if (!(*str >= '0' && *str <= '9'))
+			return (1);
 	}
 	return (0);
 }

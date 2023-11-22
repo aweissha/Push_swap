@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:53:01 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/21 16:03:35 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:48:12 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,25 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+long	ft_atoi_mod(const char *str);
 int		ft_error(void);
 void	ft_free_array(char **array);
 void	ft_free_stack(t_stack *stck);
-t_stack	*ft_make_stack_a(char **array);
+int		ft_make_stack_a(char **array, t_stack **stack_a);
 void	ft_stadd_back(t_stack **stck, t_stack *new);
 t_stack	*ft_stlast(t_stack *stck);
 t_stack	*ft_stnew(long number, long index);
-int		ft_check_multiples(t_stack *stck);
-
-
-
+int		ft_check_multiples(char **array);
+int		ft_syntax_error(char *str);
+void	ft_set_index(t_stack *stck);
+void	ft_ra(t_stack **stack_a);
+void	ft_rb(t_stack **stack_b);
+void	ft_rr(t_stack **stack_a, t_stack **stack_b);
+void	ft_sa(t_stack **stack_a);
+void	ft_sb(t_stack **stack_b);
+void	ft_ss(t_stack **stack_a, t_stack **stack_b);
+void	ft_rra(t_stack **stack_a);
+void	ft_rrb(t_stack **stack_b);
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 #endif

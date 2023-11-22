@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_multiples.c                               :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 11:57:20 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/22 13:14:06 by aweissha         ###   ########.fr       */
+/*   Created: 2023/11/22 18:06:51 by aweissha          #+#    #+#             */
+/*   Updated: 2023/11/22 18:11:20 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_multiples(char **array)
+void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 {
-	int	i;
-	int j;
-
-	i = 0;
-	while (array[i + 1] != NULL)
-	{
-		j = i + 1;
-		while (array[j] != NULL)
-		{
-			if (ft_atoi_mod(array[i]) == ft_atoi_mod(array[j]))
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	
+	t_
+	
 }

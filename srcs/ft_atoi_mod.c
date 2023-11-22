@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_mod.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 13:07:27 by aweissha          #+#    #+#             */
-/*   Updated: 2023/10/09 14:06:14 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:32:08 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi_mod(const char *str)
 {
 	unsigned int	i;
 	int				minus_counter;
-	int				number;
+	long			number;
 
 	minus_counter = 1;
 	number = 0;

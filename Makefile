@@ -10,7 +10,8 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 # Source files
-SRCS =	$(SRC_DIR)ft_check_multiples.c \
+SRCS =	$(SRC_DIR)ft_atoi_mod.c \
+		$(SRC_DIR)ft_check_multiples.c \
 		$(SRC_DIR)ft_error.c \
 		$(SRC_DIR)ft_free_array.c \
 		$(SRC_DIR)ft_free_stack.c \
@@ -19,6 +20,9 @@ SRCS =	$(SRC_DIR)ft_check_multiples.c \
 		$(SRC_DIR)ft_stlast.c \
 		$(SRC_DIR)ft_stnew.c \
 		$(SRC_DIR)push_swap.c \
+		$(SRC_DIR)ft_syntax_error.c \
+		$(SRC_DIR)ft_set_index.c \
+		$(SRC_DIR)ft_rotate \
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:15:22 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/21 18:10:35 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:47:03 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int main(int argc, char **argv)
 	char	**array;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	
+
+	stack_a = NULL;
+	stack_b = NULL;
 	if (argc == 2)
 		array = ft_split(argv[1], ' ');
 	else if (argc > 2)
@@ -31,28 +33,55 @@ int main(int argc, char **argv)
 	// 	return (ft_error());
 		
 	// transform the array of number strings to a stack build as a doubly linked list.
-	stack_a = ft_make_stack_a(array);
-	stack_b = NULL;
-	
 	// check for multiple occurence of numbers. If multiple occurence, then free the stack and print error message (ft_error in ft_free_stack)
-	if (ft_check_multiples(stack_a) == 1)
+	if (ft_make_stack_a(array, &stack_a) == 1)
 	{
-		ft_free_stack(stack_a);
+		if (argc == 2)
+			ft_free_array(array);
 		return (ft_error());
 	}
+	
+	// if (ft_check_multiples(stack_a) == 1)
+	// {
+	// 	ft_free_stack(stack_a);
+	// 	ft_free_array(array);
+	// 	return (ft_error());
+	// }
 
+
+	
 	// free the array that was allocated by ft_split.
 	if (argc == 2)
 		ft_free_array(array);
+	
+	// sorting algorithm
 
 
 
-	// testing...
+	// testing...otate
+	t_stack *test;
+
+	test = stack_a;
+	while (test)
+	{
+		printf("number: %li	", test->number);
+		printf("index: %li\n", test->index);
+		
+		
+		test = test->next;
+	}
+	ft_rra(&stack_a);
 	while (stack_a)
 	{
-		printf("%li\n", stack_a->number);
+		printf("number: %li	", stack_a->number);
+		printf("index: %li\n", stack_a->index);
+		
+		
 		stack_a = stack_a->next;
 	}
+
+
+
 	
 	// at the end of the program, the stacks need to be freed
 	ft_free_stack(stack_a);

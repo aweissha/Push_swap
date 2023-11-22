@@ -6,24 +6,35 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:39:02 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/21 14:27:15 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:31:50 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_make_stack_a(char **array)
+int	ft_make_stack_a(char **array, t_stack **stack_a)
 {
-	t_stack	*stack_a;
 	int i;
-	
-	stack_a = NULL;	
+	long n;
+// check for errors first
 	i = 0;
 	while (array[i] != NULL)
 	{
-		ft_stadd_back(&stack_a, ft_stnew(ft_atoi(array[i]), i));
+		if (ft_syntax_error(array[i]) == 1)
+			return (1);			
+		n = ft_atoi_mod(array[i]);
+		if (n > INT32_MAX || n < INT32_MIN)
+			return (1);
 		i++;
 	}
-	return (stack_a);
+	if (ft_check_multiples(array) == 1)
+		return (1);
+// then initialization of stack_a
+	i = 0;
+	while (array[i] != NULL)
+	{
+		ft_stadd_back(stack_a, ft_stnew(ft_atoi_mod(array[i]), i));
+		i++;
+	}
+	return (0);
 }
-
