@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:15:48 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/22 17:47:36 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:40:59 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ static void	ft_reverse_rotate(t_stack **stck)
 {
 	t_stack	*last;
 	
-	last = ft_stlast(*stck);
-	last->previous->next = NULL;
-	last->previous = NULL;
-	last->next = *stck;
-	(*stck)->previous = last;
-	*stck = last;
-	ft_set_index(*stck);
+	if (*stck != NULL && (*stck)->next != NULL)
+	{
+		last = ft_stlast(*stck);
+		last->previous->next = NULL;
+		last->previous = NULL;
+		last->next = *stck;
+		(*stck)->previous = last;
+		*stck = last;
+		ft_set_index(*stck);		
+	}
 }
 
 void	ft_rra(t_stack **stack_a)

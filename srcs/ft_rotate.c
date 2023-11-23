@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:54:56 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/22 16:56:51 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:41:03 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,17 @@ static void	ft_rotate(t_stack **stck)
 	t_stack	*tmp;
 	t_stack *last;
 
-	last = ft_stlast(*stck);
-	tmp = (*stck)->next;
-	last->next = *stck;
-	(*stck)->next = NULL;
-	(*stck)->previous = last;
-	tmp->previous = NULL;
-	*stck = tmp;
-	ft_set_index(*stck);
+	if (*stck != NULL && (*stck)->next != NULL)
+	{
+		last = ft_stlast(*stck);
+		tmp = (*stck)->next;
+		last->next = *stck;
+		(*stck)->next = NULL;
+		(*stck)->previous = last;
+		tmp->previous = NULL;
+		*stck = tmp;
+		ft_set_index(*stck);		
+	}
 }
 
 void	ft_ra(t_stack **stack_a)

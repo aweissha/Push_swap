@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:53:01 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/22 17:48:12 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:09:17 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 void	ft_rra(t_stack **stack_a);
 void	ft_rrb(t_stack **stack_b);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
+void	ft_pa(t_stack **stack_a, t_stack **stack_b);
+void	ft_pb(t_stack **stack_a, t_stack **stack_b);
 
 #endif

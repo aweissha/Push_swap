@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:15:22 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/22 17:47:03 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:21:26 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int main(int argc, char **argv)
 	t_stack *test;
 
 	test = stack_a;
+	printf("stack_a:\n");
 	while (test)
 	{
 		printf("number: %li	", test->number);
@@ -70,7 +71,16 @@ int main(int argc, char **argv)
 		
 		test = test->next;
 	}
-	ft_rra(&stack_a);
+	ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
+	ft_pa(&stack_a, &stack_b);
+	ft_pa(&stack_a, &stack_b);
+	ft_pa(&stack_a, &stack_b);
+	ft_pa(&stack_a, &stack_b);
+	ft_pa(&stack_a, &stack_b);
+	printf("stack_a:\n");
 	while (stack_a)
 	{
 		printf("number: %li	", stack_a->number);
@@ -78,6 +88,15 @@ int main(int argc, char **argv)
 		
 		
 		stack_a = stack_a->next;
+	}
+	printf("stack_b:\n");	
+	while (stack_b)
+	{
+		printf("number: %li	", stack_b->number);
+		printf("index: %li\n", stack_b->index);
+		
+		
+		stack_b = stack_b->next;
 	}
 
 
