@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:53:01 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/23 15:09:17 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/24 16:50:09 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef struct s_stack
 {
-	long			number;
-	long			index;
+	int			number;
+	int			index;
 	struct s_stack	*previous;
 	struct s_stack	*next;
 }	t_stack;
@@ -48,5 +48,12 @@ void	ft_rrb(t_stack **stack_b);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 void	ft_pa(t_stack **stack_a, t_stack **stack_b);
 void	ft_pb(t_stack **stack_a, t_stack **stack_b);
+int		ft_max_number(t_stack *stck);
+int		ft_max_index(t_stack *stck);
+int		ft_check_ascending(t_stack *stck);
+void	ft_sort_three(t_stack **stck);
+void	ft_first_two(t_stack **stack_a, t_stack **stack_b);
+void	ft_sorting_algorithm(t_stack **stack_a, t_stack **stack_b);
+int		ft_stsize(t_stack *stck);
 
 #endif
