@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:15:22 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/24 16:49:19 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/27 20:01:20 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,8 @@ int main(int argc, char **argv)
 		return (ft_error());
 	}
 	
-	// if (ft_check_multiples(stack_a) == 1)
-	// {
-	// 	ft_free_stack(stack_a);
-	// 	ft_free_array(array);
-	// 	return (ft_error());
-	// }
-
-
-	
-	// free the array that was allocated by ft_split.
-	if (argc == 2)
-		ft_free_array(array);
-	
 	// sorting algorithm
-
+	ft_sorting_algorithm(stack_a, stack_b);
 
 
 	// testing...otate
@@ -93,7 +80,9 @@ int main(int argc, char **argv)
 	}
 
 
-
+	// free the array that was allocated by ft_split.
+	if (argc == 2)
+		ft_free_array(array);
 	
 	// at the end of the program, the stacks need to be freed
 	ft_free_stack(stack_a);
