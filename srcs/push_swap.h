@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:53:01 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/24 16:50:09 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/28 14:43:11 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <stdio.h> //entfernen !
 # include "libft.h"
+
+int global_variable; // entfernen !
 
 typedef struct s_stack
 {
@@ -55,5 +57,5 @@ void	ft_sort_three(t_stack **stck);
 void	ft_first_two(t_stack **stack_a, t_stack **stack_b);
 void	ft_sorting_algorithm(t_stack **stack_a, t_stack **stack_b);
 int		ft_stsize(t_stack *stck);
-
+void	ft_print_stack(t_stack *stck); // entfernen !
 #endif

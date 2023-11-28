@@ -6,12 +6,24 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:15:22 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/27 20:01:20 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/28 19:28:20 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h> //entfernen!
+
+void	ft_print_stack(t_stack *stck)
+{
+	while (stck)
+	{
+		printf("number: %i	", stck->number);
+		printf("index: %i\n", stck->index);
+		
+		stck = stck->next;
+	}
+}
+
 int main(int argc, char **argv)
 {
 	// handle different command line argument inputs and make an array of number strings of it.
@@ -28,9 +40,6 @@ int main(int argc, char **argv)
 	else
 		return (ft_error());
 	
-	// check the array of strings for correctness of the input
-	// if (ft_check_input(array) == 1)
-	// 	return (ft_error());
 		
 	// transform the array of number strings to a stack build as a doubly linked list.
 	// check for multiple occurence of numbers. If multiple occurence, then free the stack and print error message (ft_error in ft_free_stack)
@@ -40,44 +49,26 @@ int main(int argc, char **argv)
 			ft_free_array(array);
 		return (ft_error());
 	}
+
+	// test stack_a before sorting algorithm
+	// printf("stack_a:\n");
+	// ft_print_stack(stack_a);
+	// printf("stack_b:\n");
+	// ft_print_stack(stack_b);
+	
+	global_variable = 0;
 	
 	// sorting algorithm
-	ft_sorting_algorithm(stack_a, stack_b);
-
-
-	// testing...otate
-	t_stack *test;
-
-	test = stack_a;
-	printf("stack_a:\n");
-	while (test)
-	{
-		printf("number: %i	", test->number);
-		printf("index: %i\n", test->index);
-		
-		
-		test = test->next;
-	}
-	
 	ft_sorting_algorithm(&stack_a, &stack_b);
+
+
+	// printf("stack_a:\n");
+	// ft_print_stack(stack_a);
+	// printf("stack_b:\n");
+	// ft_print_stack(stack_b);
 	
-	printf("stack_a:\n");
-	while (stack_a)
-	{
-		printf("number: %i	", stack_a->number);
-		printf("index: %i\n", stack_a->index);
-		
-		
-		stack_a = stack_a->next;
-	}
-	printf("stack_b:\n");	
-	while (stack_b)
-	{
-		printf("number: %i	", stack_b->number);
-		printf("index: %i\n", stack_b->index);
-		
-		stack_b = stack_b->next;
-	}
+	// printf("Anzahl Operationen: %d", global_variable);
+
 
 
 	// free the array that was allocated by ft_split.

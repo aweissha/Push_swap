@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:24:18 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/27 19:30:58 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/28 19:48:15 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ void	ft_sort_three(t_stack **stck)
 		ft_sa(stck);
 }
 
+// Pushes tho two upper elements of stack_a to stack_b. Checked!
 void	ft_first_two(t_stack **stack_a, t_stack **stack_b)
 {
 	while (ft_stsize(*stack_b) < 2 && ft_stsize(*stack_a) > 3)
@@ -273,17 +274,17 @@ void	ft_rotate_max_up(t_stack **stack_b)
 	int	median;
 	t_stack	*max_element;
 
-	max_element = ft_max_element(stack_b);
-	median = ft_stsize(stack_b) / 2;
+	max_element = ft_max_element(*stack_b);
+	median = ft_stsize(*stack_b) / 2;
 	if ((max_element->index) <= median)
 		{
 			while (max_element->index != 0)
-				ft_ra(stack_b);
+				ft_rb(stack_b);
 		}
 	if ((max_element->index) > median)
 		{
 			while (max_element->index != 0)
-				ft_rra(stack_b);
+				ft_rrb(stack_b);
 		}
 }
 
@@ -291,14 +292,32 @@ void	ft_rotate_max_up(t_stack **stack_b)
 The three ascendingly sorted elements of stack_a have to be considered*/
 void	ft_push_back(t_stack **stack_a, t_stack **stack_b)
 {
+	int	counter;
+	
 	ft_rotate_max_up(stack_b);
+	// ft_print_stack(*stack_a);
+	// ft_print_stack(*stack_b);
+
+	counter = 0;
+	if ((((*stack_b)->number) > ((*stack_a)->number)) && (((*stack_b)->number) < ((*stack_a)->next->number)))
+	{
+		ft_ra(stack_a);
+		counter = 2;
+	}
+	else if ((((*stack_b)->number) < ((*stack_a)->number)))
+		counter = 3;
 	while (*stack_b != NULL)
 	{
-		if ((ft_stlast(*stack_a)->number) > ((*stack_b)->number))
+		if ((ft_stlast(*stack_a)->number) > ((*stack_b)->number) && counter < 3)
+		{
 			ft_rra(stack_a);
+			counter++;
+		}
 		else
 			ft_pa(stack_a, stack_b);
 	}
+	// ft_print_stack(*stack_a);
+	// ft_print_stack(*stack_b);
 	while (ft_check_ascending(*stack_a) != 0)
 		ft_rra(stack_a);
 }
@@ -312,9 +331,14 @@ void	ft_sorting_algorithm(t_stack **stack_a, t_stack **stack_b)
 	Then executing the insertion for the cheapest element.**/
 	ft_insert_algorithm(stack_a, stack_b);
 
-	/*Sort the remaining three elements of stack_a*/
+	// /*Sort the remaining three elements of stack_a*/
 	ft_sort_three(stack_a);
+	
+	// 	ft_rb(stack_b);
+	// ft_print_stack(*stack_a);
+	// ft_print_stack(*stack_b);
 
-	/*Push all the now descending sorted elements of stack_b back to stack_a. The remaining three elements of stack_a have to be considered.*/
-	ft_push_back(stack_a, stack_b);
+	// /*Push all the now descending sorted elements of stack_b back to stack_a. The remaining three elements of stack_a have to be considered.*/
+	if (*stack_b != NULL)
+		ft_push_back(stack_a, stack_b);
 }
