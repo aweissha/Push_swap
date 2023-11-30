@@ -6,11 +6,11 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:54:56 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/28 18:59:21 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:24:46 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void	ft_rotate(t_stack **stck)
 {
@@ -34,14 +34,12 @@ void	ft_ra(t_stack **stack_a)
 {
 	ft_rotate(stack_a);
 	write(1, "ra\n", 3);
-		// global_variable++; // entfernen
 }
 
 void	ft_rb(t_stack **stack_b)
 {
 	ft_rotate(stack_b);
 	write(1, "rb\n", 3);
-		// global_variable++; // entfernen
 }
 
 void	ft_rr(t_stack **stack_a, t_stack **stack_b)
@@ -49,5 +47,4 @@ void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);
 	write(1, "rr\n", 3);
-		// global_variable++; // entfernen
 }

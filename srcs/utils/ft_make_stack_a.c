@@ -6,11 +6,11 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:39:02 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/22 14:31:50 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:26:16 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	ft_make_stack_a(char **array, t_stack **stack_a)
 {

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stnew.c                                         :+:      :+:    :+:   */
+/*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 16:49:36 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/20 16:18:28 by aweissha         ###   ########.fr       */
+/*   Created: 2023/11/21 10:35:39 by aweissha          #+#    #+#             */
+/*   Updated: 2023/11/30 13:26:02 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-t_stack	*ft_stnew(long number, long index)
+void	ft_free_array(char **array)
 {
-	t_stack	*node;
+	int i;
 
-	node = malloc(sizeof(t_stack));
-	if (node == NULL)
-		return (NULL);
-	node->number = number;
-	node->index = index;
-	node->next = NULL;
-	node->previous = NULL;
-	return (node);
+	i = 0;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
-

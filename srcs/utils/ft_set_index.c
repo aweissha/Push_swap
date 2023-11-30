@@ -6,11 +6,11 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:20:28 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/22 16:03:43 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:26:22 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	ft_set_index(t_stack *stck)
 {

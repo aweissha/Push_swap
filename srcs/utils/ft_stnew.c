@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stsize.c                                        :+:      :+:    :+:   */
+/*   ft_stnew.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 13:04:09 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/23 13:07:01 by aweissha         ###   ########.fr       */
+/*   Created: 2023/11/19 16:49:36 by aweissha          #+#    #+#             */
+/*   Updated: 2023/11/30 16:33:12 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	ft_stsize(t_stack *stck)
+t_stack	*ft_stnew(int number, int index)
 {
-	t_stack	*tmp;
-	int		i;
+	t_stack	*node;
 
-	if (stck == NULL)
-		return (0);
-	tmp = stck;
-	i = 1;
-	while (tmp->next != NULL)
-	{
-		tmp = tmp->next;
-		i++;
-	}
-	return (i);
+	node = malloc(sizeof(t_stack));
+	if (node == NULL)
+		return (NULL);
+	node->number = number;
+	node->index = index;
+	node->next = NULL;
+	node->previous = NULL;
+	return (node);
 }

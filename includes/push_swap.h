@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:53:01 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/28 14:43:11 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:23:14 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h> //entfernen !
-# include "libft.h"
-
-int global_variable; // entfernen !
+# include "../Libft/libft.h"
 
 typedef struct s_stack
 {
@@ -35,7 +32,7 @@ void	ft_free_stack(t_stack *stck);
 int		ft_make_stack_a(char **array, t_stack **stack_a);
 void	ft_stadd_back(t_stack **stck, t_stack *new);
 t_stack	*ft_stlast(t_stack *stck);
-t_stack	*ft_stnew(long number, long index);
+t_stack	*ft_stnew(int number, int index);
 int		ft_check_multiples(char **array);
 int		ft_syntax_error(char *str);
 void	ft_set_index(t_stack *stck);
@@ -56,6 +53,27 @@ int		ft_check_ascending(t_stack *stck);
 void	ft_sort_three(t_stack **stck);
 void	ft_first_two(t_stack **stack_a, t_stack **stack_b);
 void	ft_sorting_algorithm(t_stack **stack_a, t_stack **stack_b);
+void	ft_rotate_max_up(t_stack **stack_b);
 int		ft_stsize(t_stack *stck);
-void	ft_print_stack(t_stack *stck); // entfernen !
+void	ft_push_back(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_three(t_stack **stck);
+void	ft_insert_algorithm(t_stack **stack_a, t_stack **stack_b);
+void	ft_first_two(t_stack **stack_a, t_stack **stack_b);
+int		ft_max_number(t_stack *stck);
+int		ft_max_index(t_stack *stck);
+t_stack	*ft_max_element(t_stack *stck);
+int		ft_check_ascending(t_stack *stck);
+int		ft_steps_all_top(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
+int		ft_steps_all_bot(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
+int		ft_steps_top_bot(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
+int		ft_steps_bot_top(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
+int		ft_insertion_steps(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
+void	ft_move_all_top(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element, t_stack *target_b);
+void	ft_move_all_bot(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element, t_stack *target_b);
+void	ft_move_top_bot(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element, t_stack *target_b);
+void	ft_move_bot_top(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element, t_stack *target_b);
+void	ft_execute_rotations(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element);
+t_stack	*ft_cheapest_element(t_stack **stack_a, t_stack **stack_b);
+t_stack	*ft_find_target(t_stack **stack_b, t_stack *counter_a);
+
 #endif

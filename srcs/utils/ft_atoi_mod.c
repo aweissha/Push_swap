@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_array.c                                    :+:      :+:    :+:   */
+/*   ft_atoi_mod.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 10:35:39 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/21 10:40:34 by aweissha         ###   ########.fr       */
+/*   Created: 2023/10/09 13:07:27 by aweissha          #+#    #+#             */
+/*   Updated: 2023/11/30 16:31:08 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	ft_free_array(char **array)
+long	ft_atoi_mod(const char *str)
 {
-	int i;
+	unsigned int	i;
+	int				minus_counter;
+	long			number;
 
+	minus_counter = 1;
+	number = 0;
 	i = 0;
-	while (array[i] != NULL)
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		free(array[i]);
+		if (str[i] == '-')
+			minus_counter *= -1;
 		i++;
 	}
-	free(array);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		number = number * 10 + (str[i] - 48);
+		i++;
+	}
+	return (minus_counter * number);
 }
