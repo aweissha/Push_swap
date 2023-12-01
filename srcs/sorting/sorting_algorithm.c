@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:24:18 by aweissha          #+#    #+#             */
-/*   Updated: 2023/12/01 13:55:22 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/12/01 15:42:07 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_push_back(t_stack **stack_a, t_stack **stack_b)
 
 void	ft_sorting_algorithm(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_stsize(*stack_a) >= 3)
+	if (ft_stsize(*stack_a) >= 3 && ft_check_ascending(*stack_a) == 1)
 	{
 		ft_first_two(stack_a, stack_b);
 		ft_insert_algorithm(stack_a, stack_b);
