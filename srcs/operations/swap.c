@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:35:16 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/30 16:24:58 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:26:20 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);
-	write(1, "ss\n", 3);	
+	write(1, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:06:51 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/30 16:23:52 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:25:30 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	ft_push(t_stack **stack_1, t_stack **stack_2)
 {
-	t_stack *tmp;
-	
+	t_stack	*tmp;
+
 	if (*stack_2 != NULL)
 	{
 		tmp = *stack_1;
@@ -27,7 +27,7 @@ static void	ft_push(t_stack **stack_1, t_stack **stack_2)
 		if (tmp != NULL)
 			tmp->previous = *stack_1;
 		ft_set_index(*stack_1);
-		ft_set_index(*stack_2);		
+		ft_set_index(*stack_2);
 	}
 }
 

@@ -6,34 +6,34 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:35:54 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/30 16:25:23 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/12/01 14:58:42 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_steps_all_top(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b)
+int	all_top(t_stack *a, t_stack *b)
 {
-	if ((counter_a->index) >= (target_b->index))
-		return (counter_a->index);
+	if ((a->index) >= (b->index))
+		return (a->index);
 	else
-		return (target_b->index);
+		return (b->index);
 }
 
-int	ft_steps_all_bot(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b)
+int	all_bot(t_stack **st_a, t_stack **st_b, t_stack *a, t_stack *b)
 {
-	if ((ft_stsize(*stack_a) - (counter_a->index)) >= (ft_stsize(*stack_b) - (target_b->index)))
-		return (ft_stsize(*stack_a) - (counter_a->index));
+	if ((ft_stsize(*st_a) - (a->index)) >= (ft_stsize(*st_b) - (b->index)))
+		return (ft_stsize(*st_a) - (a->index));
 	else
-		return (ft_stsize(*stack_b) - (target_b->index));
+		return (ft_stsize(*st_b) - (b->index));
 }
 
-int	ft_steps_top_bot(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b)
+int	top_bot(t_stack **st_b, t_stack *a, t_stack *b)
 {
-	return ((counter_a->index) + (ft_stsize(*stack_b) - (target_b->index)));
+	return ((a->index) + (ft_stsize(*st_b) - (b->index)));
 }
 
-int	ft_steps_bot_top(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b)
+int	bot_top(t_stack **st_a, t_stack *a, t_stack *b)
 {
-	return ((target_b->index) + (ft_stsize(*stack_a) - (counter_a->index)));
+	return ((b->index) + (ft_stsize(*st_a) - (a->index)));
 }

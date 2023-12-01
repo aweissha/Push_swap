@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:57:20 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/30 13:25:49 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:34:33 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_check_multiples(char **array)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (array[i + 1] != NULL)

@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:20:28 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/30 13:26:22 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:35:55 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_set_index(t_stack *stck)
 {
 	long	i;
-	
+
 	i = 0;
 	while (stck != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 14:53:01 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/30 16:23:14 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/12/01 14:58:55 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct s_stack
 {
-	int			number;
-	int			index;
+	int				number;
+	int				index;
 	struct s_stack	*previous;
 	struct s_stack	*next;
 }	t_stack;
@@ -63,17 +63,18 @@ int		ft_max_number(t_stack *stck);
 int		ft_max_index(t_stack *stck);
 t_stack	*ft_max_element(t_stack *stck);
 int		ft_check_ascending(t_stack *stck);
-int		ft_steps_all_top(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
-int		ft_steps_all_bot(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
-int		ft_steps_top_bot(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
-int		ft_steps_bot_top(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
-int		ft_insertion_steps(t_stack **stack_a, t_stack **stack_b, t_stack *counter_a, t_stack *target_b);
-void	ft_move_all_top(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element, t_stack *target_b);
-void	ft_move_all_bot(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element, t_stack *target_b);
-void	ft_move_top_bot(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element, t_stack *target_b);
-void	ft_move_bot_top(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element, t_stack *target_b);
-void	ft_execute_rotations(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest_element);
+int		all_top(t_stack *a, t_stack *b);
+int		all_bot(t_stack **st_a, t_stack **st_b, t_stack *a, t_stack *b);
+int		top_bot(t_stack **st_b, t_stack *a, t_stack *b);
+int		bot_top(t_stack **st_a, t_stack *a, t_stack *b);
+int		ins_steps(t_stack **st_a, t_stack **st_b, t_stack *a, t_stack *b);
+void	m_all_top(t_stack **st_a, t_stack **st_b, t_stack *c, t_stack *b);
+void	m_all_bot(t_stack **st_a, t_stack **st_b, t_stack *c, t_stack *b);
+void	m_top_bot(t_stack **st_a, t_stack **st_b, t_stack *c, t_stack *b);
+void	m_bot_top(t_stack **st_a, t_stack **st_b, t_stack *c, t_stack *b);
+void	rotate(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest);
 t_stack	*ft_cheapest_element(t_stack **stack_a, t_stack **stack_b);
 t_stack	*ft_find_target(t_stack **stack_b, t_stack *counter_a);
+void	ft_sort_two(t_stack **stack_a);
 
 #endif

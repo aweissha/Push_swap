@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:35:39 by aweissha          #+#    #+#             */
-/*   Updated: 2023/11/30 13:26:02 by aweissha         ###   ########.fr       */
+/*   Updated: 2023/12/01 12:34:49 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free_array(char **array)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (array[i] != NULL)
